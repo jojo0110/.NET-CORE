@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>@ViewData["Title"] LlamaEngineHost</title>
+
+<!-- Base -->
+<link rel="stylesheet" href="/css/base/reset.css" />
+<!--
+<link rel="stylesheet" href="/css/base/variables.css" />
+<link rel="stylesheet" href="/css/base/typography.css" />
+-->
+
+<!-- Layout -->
+<link rel="stylesheet" href="/css/layout/layout.css" />
+<link rel="stylesheet" href="/css/layout/header.css" />
+<link rel="stylesheet" href="/css/layout/footer.css" />
+
+<!-- Components 
+<link rel="stylesheet" href="/css/components/buttons.css" />
+<link rel="stylesheet" href="/css/components/forms.css" />
+-->
+
+<!-- Global -->
+<link rel="stylesheet" href="/css/site.css" />
+<link rel="stylesheet" href="/css/vendor/bootstrap.min.css" />
+
+@RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <header>
+        @await Html.PartialAsync("_Header")
+    </header>
+
+    <nav>
+        @await Html.PartialAsync("_Nav")
+    </nav>
+
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+
+    <footer>
+        @await Html.PartialAsync("_Footer")
+    </footer>
+
+    <!-- Global JS -->
+    <script src="/js/vendor/site.js"></script>
+    <script src="/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="/js/vendor/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

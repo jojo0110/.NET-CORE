@@ -1,0 +1,27 @@
+ 
+    .flex-container {
+        display: flex;
+        flex-direction: row; /* Horizontal layout */
+        gap: 20px; /* Optional spacing between columns */
+        width:100%;
+        height:auto;
+    }
+
+    .container-a {
+        flex: 1; /* Equal width columns */
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+    }
+    
+    .container-b {
+        flex: 1; /* Equal width columns */
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+    }
+
+  
+   
+
+   

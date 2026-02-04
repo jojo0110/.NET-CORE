@@ -1,0 +1,69 @@
+
+@model LlamaEngineHost.Models.ChatViewModel
+@section Styles {
+    <link rel="stylesheet" href="/css/page/chat.css" />
+}
+
+
+
+
+<div class="flex-container">
+    <div class="container-b" style="font-size:small">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="left-panel" id="leftPanel"> 
+                    @await Html.PartialAsync("_LeftPanel", Model.leftPanelViewModel) </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-a">
+        <div class="card mb-4">
+            <div class="card-body">
+                <section class="mb-3">
+                    <div class="d-flex p-3 align-items-center">
+                        <div>
+                            <h4 class="fw-semibold mb-0">Welcome, @Model.loginRequestDTO.Name</h4>
+                            <p class="text-secondary mt-0">You are in group:  @ViewBag.userGroup</p>
+                        </div>
+                        <div class="ms-auto "><button class="btn btn-outline-dark" id="logoutBtn">Leave</button></div>
+                    </div>
+                </section>
+                <hr class="my-1 mb-3">
+                <section class="mb-3">
+                        <div class="mb-3" id="chatWindow"></div>
+                </section>
+            </div>
+        </div>
+         <div class="card mb-4">
+            <div class="card-body">
+                <section class="mb-3">
+                <div class="d-flex gap-2 w-100">
+                    <div class="flex-grow-1">
+                        <input class="form-control" type="text" id="messageInput" placeholder="Type a message..." />
+                    </div>
+                    <div style="width: 15%;">
+                        <button  class="btn btn-outline-dark" onclick="sendMessage()">Send</button>
+                    </div>
+                    
+                </div>
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+const userGroup = "@ViewBag.userGroup";
+const userEmail="@Model.loginRequestDTO.Email";
+const userName="@Model.loginRequestDTO.Name";
+const currentUser="@Model.loginRequestDTO.Name";
+</script>
+@section Scripts {
+    <script src="/js/page/chat/signalr.min.js"></script>
+    <script src="/js/page/chat/marked.min.js"></script>
+    <script src="/js/page/chat/chat.js"></script>
+}
+
+

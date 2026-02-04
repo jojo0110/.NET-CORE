@@ -1,0 +1,13 @@
+label {
+    font-size: 1.25rem; /* same as h5 */ 
+    /*font-weight: 600; slightly bolder if you prefer */ 
+    margin: 0;
+}
+
+.music-note::before {
+    content: "♫";
+    font-size: 24px;
+}
+
+.music-single-note::before { content: "♪"; font-size: 24px; }
+

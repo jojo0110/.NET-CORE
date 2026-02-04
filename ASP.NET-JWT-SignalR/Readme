@@ -1,1 +1,14 @@
 This is a ASP.Net Core MVC chat project, which includes JWT and Signal R 
+
+This app use Azure Key Vault to store the JWT Key
+
+1. In production
+Make sure your production env has key vault set up already.
+
+2. For dev env. 
+dotnet user-secrets set "JwtOptions:Key" "xtelsndmeljrereirwelkrjewklrjewkl"
+it will write the secret in local
+%APPDATA%\Microsoft\UserSecrets\<GUID>\secrets.json.
+
+After this, it should run fine in your dev env
+

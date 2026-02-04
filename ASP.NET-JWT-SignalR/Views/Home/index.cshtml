@@ -1,0 +1,94 @@
+@using LlamaEngineHost.Models
+@model LlamaEngineHost.Models.LoginRequestDTO
+@section Styles {
+    <link rel="stylesheet" href="/css/page/home.css" />
+}
+
+<div class="flex-container" style="font-size:small">
+    <div class="container-b" >
+        <div class="card mb-4">
+            <div class="card-body">
+                <h1 class="mb-0">Chat Room</h1>
+                <p class="text-secondary mt-0">A JWT and Signal R Project .</p>
+
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div id="videoListContainer">
+
+                    <section class="mb-4 bg-light text-dark p-4 rounded">
+                    <h3 class="fw-semibold mb-0 text-uppercase">Room 1</h3>
+                        <p class="text-secondary mt-0">A space individuals can seek comfort,understanding,
+                             and guidence from others.Share your feeling and experiences without judement</p>
+                    </section>
+
+                    <section class="mb-4 bg-light text-dark p-4 rounded">
+                    <h3 class="fw-semibold mb-0 text-uppercase">Romm 2</h3>
+                    <p class="text-secondary mt-0">Share your happiness, delight, gratedute or positive emotion with others.
+                        .Compliments, laughter and using uplifting language</p>
+                    </section>
+
+                    <section class="mb-4 bg-light text-dark p-4 rounded">
+                    <h3 class="fw-semibold mb-0 text-uppercase">Room 3</h3>
+                    <p class="text-secondary mt-0">Share experience about how to deal with stress and adversity<br />
+                    Learn how to adopting a healthy life style from others and set goal for career, education or hobbies</p>
+                    </section>
+
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-a">
+        <div class="card mb-4">
+            <div class="card-body">
+               
+                <label class="fw-semibold text-secondary">Test </label>
+             
+                
+            </div>
+        </div>
+         <div class="card mb-4">
+            <div class="card-body">
+             
+                <form  method="post" class="container" id="loaginForm">
+                    @Html.AntiForgeryToken()
+                    <div class="d-flex gap-3 mb-3">
+                        <label class="form-label">Email:</label>
+                        <input id="email" name="Email" class="form-control" placeholder="Enter your email"/>
+                        <div class="invalid-feedback">Please enter a valid format email.</div>
+                        
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <label class="form-label">Name:</label>
+                        <input id="name" name="Name" class="form-control" placeholder="Enter your chat name"/>
+                        <div class="invalid-feedback">Name is required.</div>
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <label class="form-label">Topic:</label>
+                        <select class="form-select" name="GroupNumber"> 
+                            @foreach (var g in (List<GroupDTO>)ViewBag.Groups) { <option value="@g.GroupNumber">@g.GroupName</option> }
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="bg-light p-3 rounded"><p class="d-flex gap-4"><span>No Judging.</span><span>No Criticism.</span><span>Try Use Positive Langugae.</span></span></p></div>
+                        <div><button class="btn btn-outline-dark" type="submit" >Join</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+         <div class="card mb-4">
+            <div class="card-body">
+                <p>Provide a valid email address if you want to receive messages. Otherwise, a dummy email is acceptable.</p>
+               
+            </div>
+        </div>
+        
+    </div>
+</div>
+@section Scripts {
+    <script src="/js/page/home/home.js"></script>
+}
+

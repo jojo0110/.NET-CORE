@@ -1,0 +1,43 @@
+/* ===== Header Layout ===== */
+
+.site-header {
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+}
+
+/* The inner container controls the width */
+.header-inner {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    width:100%;
+}
+
+
+/* Logo / Title */
+.site-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Optional right-side actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-actions a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.header-actions a:hover {
+    text-decoration: underline;
+}
